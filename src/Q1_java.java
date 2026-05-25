@@ -28,5 +28,37 @@ public class Q1_java {
         //   convertTemp(0, "X")    → Expected: -1.0
 
         // Add your code here
+
+        
+        System.out.println(convertTemp(25, "C")); // Expected: 77.0
+        System.out.println(convertTemp(77, "F")); // Expected: 25.0
+        System.out.println(convertTemp(100, "C")); // Expected: 212.0
+        System.out.println(convertTemp(50, "X")); // Expected: -1
+        System.out.println(convertTemp(32, "F"))); 
+        System.out.println(convertTemp(37, "C")); 
+        System.out.println(convertTemp(0, "X")); 
+
     }
+
+    
+    // Method to convert temperature
+    public static double convertTemp(double value, String unit) {
+        double result;
+
+        if (unit.equalsIgnoreCase("C")) {
+            // Celsius to Fahrenheit
+            result = (value * 9 / 5) + 32;
+        } else if (unit.equalsIgnoreCase("F")) {
+            // Fahrenheit to Celsius
+            result = (value - 32) * 5 / 9;
+        } else {
+            return -1; // Invalid unit
+        }
+
+        // Round to 2 decimal places
+        result = Math.round(result * 100.0) / 100.0;
+
+        return result;
+    }
+
 }
