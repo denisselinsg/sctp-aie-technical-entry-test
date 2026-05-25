@@ -17,21 +17,31 @@ public class Q3_java {
 
     public static String formatName(String firstName, String lastName) {
         // Add your code here
-        return "";
+         return lastName + ", " + firstName;
     }
 
     public static String formatInitials(String firstName, String lastName) {
         // Add your code here
-        return "";
+    if (firstName == null || lastName == null || 
+        firstName.isEmpty() || lastName.isEmpty()) {
+        return "Either firstName or lastName is empty.";
+    }
+
+    char firstInitial = Character.toUpperCase(firstName.charAt(0));
+    char lastInitial = Character.toUpperCase(lastName.charAt(0));
+
+    return firstInitial + "." + lastInitial + ".";
+
     }
 
     public static void main(String[] args) {
-        // Task 3: Call both methods with the following inputs and print each result:
-        //   formatName("Alice", "Tan")    → Expected: "Tan, Alice"
-        //   formatName("bob", "lim")      → Expected: "Lim, Bob"
-        //   formatInitials("Alice","Tan") → Expected: "A.T."
-        //   formatInitials("bob","lim")   → Expected: "B.L."
+         Q3_java name = new Q3_java();
 
-        // Add your code here
+        System.out.println(name.formatName("Alice", "Tan"));    //→ Expected: "Tan, Alice"
+        System.out.println(name.formatName("bob", "lim"));      //→ Expected: "Lim, Bob"
+        System.out.println(name.formatInitials("Alice","Tan")); //→ Expected: "A.T."
+        System.out.println(name.formatInitials("bob","lim"));   //→ Expected: "B.L."
+        System.out.println(name.formatInitials("","lim"));   
+        System.out.println(name.formatInitials("ABC","")); 
     }
 }
