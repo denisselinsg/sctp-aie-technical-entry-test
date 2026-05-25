@@ -34,10 +34,14 @@ public class Q1_java {
         System.out.println(convertTemp(77, "F")); // Expected: 25.0
         System.out.println(convertTemp(100, "C")); // Expected: 212.0
         System.out.println(convertTemp(50, "X")); // Expected: -1
-        System.out.println(convertTemp(32, "F"))); 
-        System.out.println(convertTemp(37, "C")); 
-        System.out.println(convertTemp(0, "X")); 
+        System.out.println(convertTemp(32, "F")); // Expected: 0.0
+        System.out.println(convertTemp(37, "C")); // Expected: 98.6
+        System.out.println(convertTemp(0, "X")); // Expected: -1.0
 
+        System.out.println(String.format("%.2f",convertTemp(25, "C"))); // Expected: 77.00
+        System.out.println(String.format("%.2f",convertTemp(77, "F"))); // Expected: 25.00
+        System.out.println(String.format("%.2f",convertTemp(0, "X"))); // Expected: -1.00
+        
     }
 
     
